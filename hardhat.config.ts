@@ -8,11 +8,15 @@ const PRIVATE_KEY = process.env.PRIVATE_KEY || '';
 const POLYGONSCAN_API_KEY = process.env.POLYGONSCAN_API_KEY;
 
 const config: HardhatUserConfig = {
-  defaultNetwork: 'polygon_mumbai',
+  defaultNetwork: 'sepolia',
   networks: {
     hardhat: {},
     polygon_mumbai: {
       url: 'https://rpc-mumbai.maticvigil.com',
+      accounts: [PRIVATE_KEY],
+    },
+    sepolia: {
+      url: 'https://sepolia.infura.io/v3/',
       accounts: [PRIVATE_KEY],
     },
   },
@@ -20,7 +24,15 @@ const config: HardhatUserConfig = {
     apiKey: POLYGONSCAN_API_KEY,
   },
   solidity: {
-    version: '0.8.0',
+    compilers: [
+      {
+        version: '0.6.0',
+      },
+      {
+        version: '0.8.0',
+      },
+    ],
+    // version: '^0.6.0',
     settings: {
       optimizer: {
         enabled: true,
