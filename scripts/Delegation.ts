@@ -11,7 +11,7 @@ import { TransactionResponse } from '@ethersproject/providers';
 import { ethers } from 'hardhat';
 
 const CONTRACT_NAME = 'Delegation';
-const ATTACKER_NAME = 'Attacker';
+const ATTACKER_NAME = 'DelegationAttacker';
 const CONTRACT_ADDRESS = '0x9F3242e4C16C606abEB8E885FDe48dFB53003335';
 
 export async function main() {

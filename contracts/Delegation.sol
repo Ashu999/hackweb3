@@ -30,7 +30,7 @@ contract Delegation {
     }
 }
 
-contract Attacker {
+contract DelegationAttacker {
     address delegationAddress;
 
     constructor(address _delegationAddress) {
